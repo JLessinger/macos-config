@@ -32,6 +32,7 @@ function execute_mac {
     cp .bashrc ~/ && . ~/.bashrc
     cp .bash_profile ~/
     cp .inputrc ~/ && ~/.inputrc
+    cp .gitconfig_mac ~/.gitconfig
     /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
     brew install emacs
 }
@@ -40,6 +41,7 @@ function execute_ubuntu {
     cp .bashrc ~/ && . ~/.bashrc
     cp .bash_profile ~/
     cp .inputrc ~/ && ~/.inputrc
+    cp .gitconfig_ubuntu ~/.gitconfig
     sudo apt-get update && sudo apt-get install emacs
 }
 

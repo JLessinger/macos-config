@@ -1,0 +1,9 @@
+	token = 839a9e127f81d420c1b93a103130c20b
+[credential]
+	helper = osxkeychain
+[core]
+	editor = emacs
+[push]
+	default = simple
+[alias]
+	sl = log --graph --all --decorate
