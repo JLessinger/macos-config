@@ -29,19 +29,18 @@ function confirm {
 
 function execute_mac {
     printf "executing mac setup...\n"
-    cp .bashrc ~/
+    cp .bashrc ~/ && . ~/.bashrc
     cp .bash_profile ~/
-    cp .inputrc ~/
-    
+    cp .inputrc ~/ && ~/.inputrc
     /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
     brew install emacs
 }
 
 function execute_ubuntu {
-    cp .bashrc ~/
+    cp .bashrc ~/ && . ~/.bashrc
     cp .bash_profile ~/
-    cp .inputrc ~/
-    sudo apt-get install emacs
+    cp .inputrc ~/ && ~/.inputrc
+    sudo apt-get update && sudo apt-get install emacs
 }
 
 
