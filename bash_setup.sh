@@ -2,7 +2,7 @@ USG_MSG="usage: bash_setup.sh [-b] -s (mac|ubuntu)
 \t-b : bypass interactive confirmation; just execute\n"
 
 function abort {
-    printf "$1\n" >&2
+    printf "$1" >&2
     exit 1
 }
 
@@ -28,15 +28,19 @@ function confirm {
 }
 
 function execute_mac {
+    printf "executing mac setup...\n"
     cp .bashrc ~/
-    cp .bash_profile ~
-    sudo /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-    sudo brew install emacs
+    cp .bash_profile ~/
+    cp .inputrc ~/
+    
+    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    brew install emacs
 }
 
 function execute_ubuntu {
     cp .bashrc ~/
-    cp .bash_profile ~
+    cp .bash_profile ~/
+    cp .inputrc ~/
     sudo apt-get install emacs
 }
 
@@ -47,10 +51,7 @@ function confirm_execute {
 	execute_mac
     elif [ "$SYSTEM" == "ubuntu" ]; then
 	execute_ubuntu
-    else
-	# shouldn't be here
     fi
-    
 }
 
 function verify_confirm_execute {
@@ -69,7 +70,7 @@ function parse_verify_confirm_execute {
     REPLICATE=false
     SYSTEM=""
 
-    while getopts "hbri:" opt; do
+    while getopts "s:bh" opt; do
 	case "$opt" in
 	    # fill in options
 	    s)
@@ -95,3 +96,5 @@ function parse_verify_confirm_execute {
     set "${args[@]}"
     verify_confirm_execute "$@"
 }
+
+parse_verify_confirm_execute "$@"
