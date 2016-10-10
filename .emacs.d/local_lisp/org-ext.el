@@ -2,6 +2,7 @@
   :config
   (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
 
+(require 'org)
 (require 'org-id)
 
 (eval-after-load 'org
@@ -59,6 +60,7 @@
                         (when (and (eq major-mode 'org-mode)
                                    (eq buffer-read-only nil))
                           (eos/org-add-ids-to-headlines-in-file))))))
+
 ;; drawer visibility
 (defalias 'org-cycle-hide-drawers 'lawlist-block-org-cycle-hide-drawers)
 
