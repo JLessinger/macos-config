@@ -14,6 +14,7 @@ function clean {
 	DIR="."
     fi
     rm $DIR/*~
+    rm $DIR/\#*
 }
 
 function cleanr {
@@ -24,12 +25,14 @@ function cleanr {
     find "$DIR" -name "*~" -delete
 }
 
-#java
+# java
 
 export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.7.0_12.jdk/Contents/Home"
 export ANT_HOME="/usr/local/Cellar/ant/1.9.2/libexec"
 
 test -r /sw/bin/init.sh && . /sw/bin/init.sh
+
+# python
 
 # Setting PATH for Python 2.7
 # The orginal version is saved in .profile.pysave
@@ -49,3 +52,5 @@ export DYLD_LIBRARY_PATH=/usr/local/mysql-5.5.13-osx10.6-x86_64/lib/
 
 # added by Anaconda2 4.0.0 installer
 export PATH="/Users/jonathan/Library/anaconda2/bin:$PATH"
+
+#if [ -e /Users/jonathan/.nix-profile/etc/profile.d/nix.sh ]; then . /Users/jonathan/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
