@@ -1,0 +1,31 @@
+ls
+rm SmartRanker
+ls
+clean
+ls
+rm FileParserTest.java
+rm FileParser.java
+ls
+clean
+rm *~
+ls
+ls
+cd ..
+ls
+cd bktree/
+ls
+cd. .
+cd ..
+ls
+cd autocorrect/
+ls
+ls
+rm WhitespaceGenerator.java\~
+ls
+rm SmartRanker.java
+rm StandardRanker.java 
+clear
+ls
+rm TODO.org
+rm TODO.org~
+ls

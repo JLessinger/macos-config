@@ -1,13 +1,15 @@
 (setq inhibit-startup-message t)
 (require 'package)
+(package-initialize)
 (setq package-enable-at-startup nil)
 (setq package-archives '(("gnu" . "https://elpa.gnu.org/packages/")
 			 ("melpa" . "http://melpa.org/packages/")))
 
-(package-initialize)
+
 (unless (package-installed-p 'use-package)
   (package-refresh-contents)
   (package-install 'use-package))
+(set (setq use-package-always-ensure t)
 
 (use-package try
   :ensure t)
@@ -26,23 +28,7 @@
 (global-set-key (kbd "C-c i") (kbd "C-x h C-M-\\"))
 (global-set-key (kbd "M-r") (lambda () (interactive) (revert-buffer)))
 
-(defun my-load-all-in-directory (dir)
-  "`load' all elisp libraries in directory DIR which are not already loaded."
-  (interactive "D")
-  (let ((libraries-loaded (mapcar #'file-name-sans-extension
-                                  (delq nil (mapcar #'car load-history)))))
-    (dolist (file (directory-files dir t ".+\\.elc?$"))
-      (let ((library (file-name-sans-extension file)))
-        (unless (member library libraries-loaded)
-          (load library nil t)
-          (push library libraries-loaded))))))
-
-(load "~/.elisp/autoloads" 'install)
-
-
-
 (defun eshell/clear ()
-  "04Dec2001 - sailor, to clear the eshell buffer."
   (interactive)
   (let ((inhibit-read-only t))
     (erase-buffer)))
@@ -54,21 +40,18 @@
 (setq mac-command-modifier 'meta)
 (setq mac-option-modifier nil)
 
-(add-to-list 'load-path "~/.autocom")
 (require 'auto-complete-config)
-(add-to-list 'ac-dictionary-directories "~/.autocom/ac-dict")
+(add-to-list 'ac-dictionary-directories "~/.emacs.d/.autocom/ac-dict")
 (ac-config-default)
 (global-linum-mode 1)
 (add-hook 'c-mode-common-hook '(lambda () (local-set-key (kbd "RET") 'newline-and-indent)))
 
 (add-hook 'after-init-hook '(lambda () (delete-other-frames)))
 
-(add-to-list 'load-path "~/.elisp")
 (require 'install)
 
-(add-to-list 'load-path (expand-file-name "~/.elisp"))
 (require 'auto-install)
-(setq auto-install-directory "~/.elisp/auto-install-downloads/")
+(setq auto-install-directory "~/.emacs.d/auto-install-downloads/")
 (my-load-all-in-directory auto-install-directory)
 
 (add-hook 'text-mode-hook
@@ -90,6 +73,3 @@
 
 (add-to-list 'el-get-recipe-path "~/.emacs.d/el-get-user/recipes")
 (el-get 'sync)
-
-;(add-hook 'python-mode-hook 'jedi:setup)
-;(setq jedi:complete-on-dot t)  
