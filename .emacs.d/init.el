@@ -1,5 +1,6 @@
 (load-file "~/.emacs.d/package_bootstrap.el")
 (load-file "~/.emacs.d/global.el")
+(load-file "~/.emacs.d/org-ext.el")
 
 (use-package try)
 
