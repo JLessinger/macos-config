@@ -1,4 +1,3 @@
-
 ;; Added by Package.el.  This must come before configurations of
 ;; installed packages.  Don't delete this line.  If you don't want it,
 ;; just comment it out by adding a semicolon to the start of the line.
@@ -6,12 +5,12 @@
 (package-initialize)
 
 (load-file "~/.emacs.d/package_bootstrap.el")
-(load-file "~/.emacs.d/global.el")
 (load-file "~/.emacs.d/org-ext.el")
+(load-file "~/.emacs.d/global.el")
 
 (use-package try)
 
- (use-package which-key
+(use-package which-key
   :config (which-key-mode))
 
 (use-package org-bullets
@@ -19,6 +18,6 @@
   (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
 
 
-(global-set-key (kbd "C-.") (lambda () (interactive) (next-line 5)))
-(global-set-key (kbd "C-c i") (kbd "C-x h C-M-\\"))
-(global-set-key (kbd "M-r") (lambda () (interactive) (revert-buffer)))
+
+
+
