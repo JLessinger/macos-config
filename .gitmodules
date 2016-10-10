@@ -1,0 +1,4 @@
+[submodule ".emacs.d/el-get/fuzzy"]
+      path = .emacs.d/el-get/fuzzy
+      url = https://github.com/auto-complete/fuzzy-el.git
+      ignore = all
