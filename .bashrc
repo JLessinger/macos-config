@@ -49,7 +49,9 @@ export PATH="/Library/Frameworks/GTK+.framework/Versions/2.18.x11/Resources/bin:
 #export PYTHONPATH="$PYTHONPATH:/System/Library/Frameworks/Python.framework/Versions/2.7/Extras/lib/python/"
 
 ## can we use both, defaulting to anaconda? this particular setting doesn't work
-#export PYTHONPATH="~/Library/anaconda2/lib/:$PYTHONPATH"
+#export PYTHONPATH="/Users/jonathan/Library/anaconda2/lib/:$PYTHONPATH"
+
+####aliases
 
 ####aliases (linux only?)
 #alias cp='cp --backup=numbered'
@@ -58,10 +60,8 @@ export PATH="/Library/Frameworks/GTK+.framework/Versions/2.18.x11/Resources/bin:
 
 export DYLD_LIBRARY_PATH=/usr/local/mysql-5.5.13-osx10.6-x86_64/lib/
 
-# added by Anaconda2 4.0.0 installer
-PATH=~/Library/anaconda2/bin:$PATH
 
-#if [ -e ~/.nix-profile/etc/profile.d/nix.sh ]; then . ~/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
+#if [ -e /Users/jonathan/.nix-profile/etc/profile.d/nix.sh ]; then . /Users/jonathan/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
 
 # iterm 
 
@@ -139,7 +139,7 @@ function _color_return {
     #return $ret
 }
 
-HISTSIZE=130000
+HISTSIZE=1000000
 HISTFILESIZE=-1
 
 # tmux
@@ -148,3 +148,7 @@ export EVENT_NOKQUEUE=1
 PS1="\[\e[0;\$(_color_return)m\]\u\[\e[0m\]@\[\e[0;$((31 + $(hostname | cksum | cut -c1-3) % 6))m\]\h\[\e[0m\]:\w\[\e[0;33m\]\$(_dotfiles_scm_info)\[\e[0m\]$END "
 
 PROMPT_COMMAND="touch_local_fs"
+
+export PATH="/Users/jonathan/Library/anaconda2/bin:$PATH"
+
+#if [ -e /Users/jonathan/.nix-profile/etc/profile.d/nix.sh ]; then . /Users/jonathan/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer

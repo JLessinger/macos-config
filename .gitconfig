@@ -14,6 +14,6 @@
 	sl = log --graph --all --decorate
 	resolve-list = diff --name-only --diff-filter=U
 [merge]
-  tool = ediff
+	  tool = ediff
 [mergetool "ediff"]
-  cmd = emacsclient -c -a \"\"  --eval \"(ediff-merge-files-with-ancestor \\\"$LOCAL\\\" \\\"$REMOTE\\\" \\\"$BASE\\\" nil \\\"$MERGED\\\")\"
+	     cmd = emacsclient -c -a \"\"  --eval \"(ediff-merge-files-with-ancestor \\\"$LOCAL\\\" \\\"$REMOTE\\\" \\\"$BASE\\\" nil \\\"$MERGED\\\")\"
