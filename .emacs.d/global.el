@@ -7,6 +7,10 @@
 (setq mac-command-modifier 'meta)
 (setq mac-option-modifier nil)
 
+(global-set-key (kbd "C-,") 'backward-paragraph)
+(global-set-key (kbd "C-.") 'forward-paragraph)
+(global-set-key (kbd "C-c l") 'org-store-link)
+
 (defun eshell/clear ()
   (interactive)
   (let ((inhibit-read-only t))
