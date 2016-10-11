@@ -12,3 +12,4 @@
 	default = simple
 [alias]
 	sl = log --graph --all --decorate
+	merge-ls = diff --name-only --diff-filter=U
