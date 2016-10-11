@@ -1,5 +1,7 @@
 (require 'org-id)
 (setq org-id-link-to-org-use-id 'create-if-interactive-and-no-custom-id)
+   (setq org-todo-keywords
+       '((sequence "TODO" "AWAIT" "|" "DONE")))
 
 (defun eos/org-custom-id-get (&optional pom create prefix)
   "Get the CUSTOM_ID property of the entry at point-or-marker POM.
