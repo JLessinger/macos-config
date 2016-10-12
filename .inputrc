@@ -1,1 +1,5 @@
 set completion-ignore-case On
+
+"\M-f": forward-word
+"\M-b": backward-word
+"\M-d": kill-word
