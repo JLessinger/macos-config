@@ -68,5 +68,8 @@ stt_both  () { setTerminalText 0 $@; }
 stt_tab   () { setTerminalText 1 $@; }
 stt_title () { setTerminalText 2 $@; }
 
+HISTSIZE=130000
+HISTFILESIZE=-1
+
 # tmux
 export EVENT_NOKQUEUE=1
