@@ -46,7 +46,9 @@ PATH="/Library/Frameworks/GTK+.framework/Versions/2.18.x11/Resources/bin:${PATH}
 #export PYTHONPATH="/Users/jonathan/Library/anaconda2/lib/:$PYTHONPATH"
 
 ####aliases
-
+alias cp='cp --backup=numbered'
+alias ln='ln --backup=numbered'
+alias mv='mv -f --backup=numbered'
 
 export DYLD_LIBRARY_PATH=/usr/local/mysql-5.5.13-osx10.6-x86_64/lib/
 
