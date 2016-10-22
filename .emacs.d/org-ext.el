@@ -7,6 +7,7 @@
 (setq org-highest-priority ?0)
 (setq org-lowest-priority ?9)
 (setq org-default-priority ?5)
+(setq org-enforce-todo-dependencies 't)
 
 (defun eos/org-custom-id-get (&optional pom create prefix)
   "Get the CUSTOM_ID property of the entry at point-or-marker POM.
