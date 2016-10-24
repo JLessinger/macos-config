@@ -1,5 +1,4 @@
 export EDITOR=`which emacs`
-
 function cl {
     DIR=$1
     if [ -z "$1" ]; then
@@ -43,7 +42,7 @@ PATH="/Library/Frameworks/GTK+.framework/Versions/2.18.x11/Resources/bin:${PATH}
 #export PYTHONPATH="$PYTHONPATH:/System/Library/Frameworks/Python.framework/Versions/2.7/Extras/lib/python/"
 
 ## can we use both, defaulting to anaconda? this particular setting doesn't work
-#export PYTHONPATH="/Users/jonathan/Library/anaconda2/lib/:$PYTHONPATH"
+#export PYTHONPATH="~/Library/anaconda2/lib/:$PYTHONPATH"
 
 ####aliases (linux only?)
 #alias cp='cp --backup=numbered'
@@ -53,9 +52,9 @@ PATH="/Library/Frameworks/GTK+.framework/Versions/2.18.x11/Resources/bin:${PATH}
 export DYLD_LIBRARY_PATH=/usr/local/mysql-5.5.13-osx10.6-x86_64/lib/
 
 # added by Anaconda2 4.0.0 installer
-export PATH="/Users/jonathan/Library/anaconda2/bin:$PATH"
+export PATH="~/Library/anaconda2/bin:$PATH"
 
-#if [ -e /Users/jonathan/.nix-profile/etc/profile.d/nix.sh ]; then . /Users/jonathan/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
+#if [ -e ~/.nix-profile/etc/profile.d/nix.sh ]; then . ~/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
 
 # iterm 
 
