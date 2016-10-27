@@ -3,6 +3,8 @@
 (setq inhibit-startup-message t)
 
 (setq indent-tabs-mode nil)
+(setq x-select-enable t)
+
 
 (delete-selection-mode t)
 (setq mac-option-key-is-meta nil)
@@ -11,9 +13,11 @@
 (setq mac-option-modifier nil)
 (setq read-file-name-completion-ignore-case t)
 (setq read-buffer-completion-ignore-case t)
+
 (add-hook 'org-mode-hook (lambda () (setq truncate-lines nil)))
 (eval-after-load 'org
   (define-key org-mode-map (kbd "C-,") nil))
+(add-hook 'find-file-hook (lambda () (linum-mode 1)))
 
 
 (global-set-key (kbd "C-,") 'backward-paragraph)
