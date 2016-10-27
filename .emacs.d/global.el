@@ -1,3 +1,5 @@
+(load-file "~/.emacs.d/org-ext.el")
+
 (setq inhibit-startup-message t)
 
 (delete-selection-mode t)
