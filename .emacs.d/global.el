@@ -2,6 +2,8 @@
 
 (setq inhibit-startup-message t)
 
+(setq indent-tabs-mode nil)
+
 (delete-selection-mode t)
 (setq mac-option-key-is-meta nil)
 (setq mac-command-key-is-meta t)
