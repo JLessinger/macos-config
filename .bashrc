@@ -35,7 +35,7 @@ test -r /sw/bin/init.sh && . /sw/bin/init.sh
 
 # Setting PATH for Python 2.7
 # The orginal version is saved in .profile.pysave
-PATH="/Library/Frameworks/GTK+.framework/Versions/2.18.x11/Resources/bin:${PATH}"
+export PATH="/Library/Frameworks/GTK+.framework/Versions/2.18.x11/Resources/bin:${PATH}"
 
 ## use anaconda libraries instead
 #export PYTHONPATH="/usr/local/lib/python2.7/site-packages:/Library/Python/2.7/site-packages/"
@@ -52,7 +52,7 @@ PATH="/Library/Frameworks/GTK+.framework/Versions/2.18.x11/Resources/bin:${PATH}
 export DYLD_LIBRARY_PATH=/usr/local/mysql-5.5.13-osx10.6-x86_64/lib/
 
 # added by Anaconda2 4.0.0 installer
-export PATH="~/Library/anaconda2/bin:$PATH"
+PATH=~/Library/anaconda2/bin:$PATH
 
 #if [ -e ~/.nix-profile/etc/profile.d/nix.sh ]; then . ~/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
 
