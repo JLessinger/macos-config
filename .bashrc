@@ -1,4 +1,5 @@
 export EDITOR=`which emacs`
+
 function cl {
     DIR=$1
     if [ -z "$1" ]; then
@@ -22,6 +23,17 @@ function cleanr {
 	DIR="."
     fi
     find "$DIR" -name "*~" -delete
+}
+
+function preexec {
+    F=".autosl-temp-file-"`date +%s | md5`
+    touch $F
+    rm $F
+}
+
+
+function precmd {
+:
 }
 
 # java
@@ -74,3 +86,7 @@ HISTFILESIZE=-1
 
 # tmux
 export EVENT_NOKQUEUE=1
+
+
+# this has to be last
+source ~/.bash-preexec.sh
