@@ -247,3 +247,16 @@ footnote; or, the properties drawer.  Otherwise make it visible."
        (save-excursion (outline-next-heading) (point)) t)
       (outline-flag-region b (point-at-eol) t)
     (user-error ":END: line missing at position %s" b))))))))))
+
+
+(setq org-agenda-prefix-format
+      '((agenda . " %i %-12:c%?-12t% s")
+	(timeline . "  % s")
+	(todo . "[ %-8:c %-32(concat (org-pretty-format-outline-path (cdr (org-get-outline-path))) \"]\") ")
+	(tags . "[ %-8:c %-32(concat (org-pretty-format-outline-path (cdr (org-get-outline-path))) \"]\") ")
+	(search . " %i %-12:c")))
+
+(defun org-pretty-format-outline-path (p)
+  (if (consp p)
+      (concat (org-format-outline-path p) " ")
+    ""))
