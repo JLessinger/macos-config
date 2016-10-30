@@ -57,3 +57,4 @@
 (global-set-key (kbd "C-c l") 'org-store-link)
 (global-set-key (kbd "C-c i") (kbd "C-x h C-M-\\"))
 (global-set-key (kbd "M-r") (lambda () (interactive) (revert-buffer)))
+(global-set-key (kbd "C-c C-r") 'revert-all-buffers-no-confirm)
