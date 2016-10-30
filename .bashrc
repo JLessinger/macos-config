@@ -25,15 +25,10 @@ function cleanr {
     find "$DIR" -name "*~" -delete
 }
 
-function preexec {
+function touch_local_fs {
     F=".autosl-temp-file-"`date +%s | md5`
     touch $F
     rm $F
-}
-
-
-function precmd {
-:
 }
 
 # java
@@ -152,6 +147,4 @@ export EVENT_NOKQUEUE=1
 
 PS1="\[\e[0;\$(_color_return)m\]\u\[\e[0m\]@\[\e[0;$((31 + $(hostname | cksum | cut -c1-3) % 6))m\]\h\[\e[0m\]:\w\[\e[0;33m\]\$(_dotfiles_scm_info)\[\e[0m\]$END "
 
-
-# this has to be last
-source ~/.bash-preexec.sh
+PROMPT_COMMAND="touch_local_fs"
