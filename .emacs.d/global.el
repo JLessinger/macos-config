@@ -19,6 +19,8 @@
 (eval-after-load 'org
   (define-key org-mode-map (kbd "C-,") nil))
 (add-hook 'find-file-hook (lambda () (linum-mode 1)))
+(add-hook 'python-mode-hook 'anaconda-mode)
+(add-hook 'anaconda-mode-hook (lambda () (anaconda-mode-config)))
 
 
 (global-set-key (kbd "C-,") 'backward-paragraph)
@@ -53,3 +55,13 @@
       (when (and (buffer-file-name) (file-exists-p (buffer-file-name)) (not (buffer-modified-p)))
 	(revert-buffer t t) )))
   (message "Refreshed open files."))
+
+;;; Company, and Company backends.
+(add-hook 'after-init-hook 'global-company-mode)
+(eval-after-load 'company
+  (progn
+    '(add-to-list 'company-backends 'company-anaconda)))
+
+(defun anaconda-mode-config ()
+  (bind-keys*
+   ("C-M-i" . company-complete)))
