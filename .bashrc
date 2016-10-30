@@ -81,11 +81,76 @@ stt_both  () { setTerminalText 0 $@; }
 stt_tab   () { setTerminalText 1 $@; }
 stt_title () { setTerminalText 2 $@; }
 
+_dotfiles_scm_info()
+{
+  # find out if we're in a git or hg repo by looking for the control dir
+    local d git hg
+    d="$PWD"
+    while test "$d" != "/" ; do
+        if [ -f "$d/.githomedirmarker" ] ; then
+            break
+        fi
+        if test -d "$d/.git" ; then
+            git="$d"
+            break
+        fi
+        if test -d "$d/.hg" ; then
+            hg="$d"
+            break
+        fi
+        # portable "realpath" equivalent
+            d=$(cd "$d/.." && echo $PWD)
+    done
+    # weird echo constructs are to force a suffix of a space character
+    # in the case where we find a branch; we don't output anything if
+    # we don't find one
+    if test -n "$hg" ; then
+        if test -f $hg/.hg/bookmarks.current ; then
+            echo " (`cat $hg/.hg/bookmarks.current`)"
+        elif test -f $hg/.hg/branch ; then
+            echo " (`cat $hg/.hg/branch`)"
+        fi
+    elif test -n "$git" ; then
+        if test -f "$git/.git/HEAD" ; then
+            local head="`cat $git/.git/HEAD`"
+            case "$head" in
+                # ref:\ refs/heads/master)
+                #     echo " (m)"
+                #     ;;
+                ref:\ refs/heads/*)
+                    if test -n "$ZSH_VERSION" ; then
+                        # older zsh doesn't support the bash substring syntax
+                        echo " ($head[17,-1])"
+                    else
+                        echo " (${head:16})"
+                    fi
+                    ;;
+                *)
+                    # not sure what this is
+                    echo " (${head:7})"
+                    ;;
+            esac
+        fi
+    fi
+}
+
+function _color_return {
+    ret=$?
+    if [ $ret = 0 ]; then
+        echo "0"
+    else
+        echo "31"
+    fi
+    #return $ret
+}
+
 HISTSIZE=130000
 HISTFILESIZE=-1
 
 # tmux
 export EVENT_NOKQUEUE=1
+
+PS1="\[\e[0;\$(_color_return)m\]\u\[\e[0m\]@\[\e[0;$((31 + $(hostname | cksum | cut -c1-3) % 6))m\]\h\[\e[0m\]:\w\[\e[0;33m\]\$(_dotfiles_scm_info)\[\e[0m\]$END "
 
 
 # this has to be last
