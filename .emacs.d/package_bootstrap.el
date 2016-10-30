@@ -1,3 +1,4 @@
+(package-initialize)
 (require 'package)
 (package-initialize)
 (setq package-enable-at-startup nil)

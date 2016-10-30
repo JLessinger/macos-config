@@ -1,4 +1,11 @@
+(use-package org-bullets
+  :config
+  (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
+
 (require 'org-id)
+
+(eval-after-load 'org
+  (define-key org-mode-map (kbd "C-,") nil))
 
 (setq org-id-link-to-org-use-id 'create-if-interactive-and-no-custom-id)
    (setq org-todo-keywords
@@ -40,6 +47,7 @@
     (when (re-search-forward "^#\\+OPTIONS:.*auto-id:t" (point-max) t)
       (org-map-entries (lambda () (eos/org-custom-id-get (point) 'create))))))
 
+(add-hook 'org-mode-hook (lambda () (setq truncate-lines nil)))
 ;; automatically add ids to saved org-mode headlines
 (add-hook 'org-mode-hook
           (lambda ()
