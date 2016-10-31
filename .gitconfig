@@ -1,0 +1,19 @@
+[user]
+	name = Jonathan Lessinger
+	email = jonathan.lessinger@gmail.com
+[github]
+	user = JLessinger
+	token = 839a9e127f81d420c1b93a103130c20b
+[credential]
+	helper = osxkeychain
+[core]
+	editor = emacs
+[push]
+	default = simple
+[alias]
+	sl = log --graph --all --decorate
+	resolve-list = diff --name-only --diff-filter=U
+[merge]
+  tool = ediff
+[mergetool "ediff"]
+  cmd = emacsclient -c -a \"\"  --eval \"(ediff-merge-files-with-ancestor \\\"$LOCAL\\\" \\\"$REMOTE\\\" \\\"$BASE\\\" nil \\\"$MERGED\\\")\"
