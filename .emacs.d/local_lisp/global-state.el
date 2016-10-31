@@ -27,5 +27,6 @@
 (setq mac-option-modifier nil)
 (setq read-file-name-completion-ignore-case t)
 (setq read-buffer-completion-ignore-case t)
+(global-auto-revert-mode 1)
 (add-hook 'find-file-hook (lambda () (linum-mode 1)))
 (add-hook 'find-file-hook 'global-kbd-mode)
