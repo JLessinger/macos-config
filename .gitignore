@@ -5,3 +5,5 @@
 .emacs.d/el-get
 .emacs.d/.org-id-locations
 *.elc
+.gitconfig_*
+*.orig
