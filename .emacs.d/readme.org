@@ -1,9 +1,0 @@
-#+STARTUP: showall hidestars
-
-* t1
-	blah
-	- meh
-	- meh 2
-* t2
-	blah blah
-	[[google.com][google]]
