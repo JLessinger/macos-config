@@ -25,7 +25,7 @@
  '(ediff-window-setup-function (quote ediff-setup-windows-plain))
  '(org-agenda-files
    (quote
-    ("~/Documents/notes/shared-notes/sh_main.org" "~/Documents/notes/main.org")))
+    ("~/Documents/notes/money.org" "~/Documents/notes/shared-notes/sh_main.org" "~/Documents/notes/main.org")))
  '(package-selected-packages
    (quote
     (which-key use-package try org-bullets org haskell-mode haskell-emacs company-jedi company-anaconda buffer-move auctex))))
