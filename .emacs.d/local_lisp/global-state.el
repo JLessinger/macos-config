@@ -30,3 +30,4 @@
 (global-auto-revert-mode 1)
 (add-hook 'find-file-hook (lambda () (linum-mode 1)))
 (add-hook 'find-file-hook 'global-kbd-mode)
+(tool-bar-mode -1)

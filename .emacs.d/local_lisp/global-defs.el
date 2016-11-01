@@ -39,5 +39,7 @@
 	    (define-key map (kbd "C-,") 'backward-paragraph)
 	    (define-key map (kbd "C-.") 'forward-paragraph)
 	    (define-key map (kbd "C-c i") (kbd "C-x h C-M-\\"))
+	    (define-key map (kbd "M-l") 'goto-line)
+	    (define-key map (kbd "M-g") 'ace-window)
 	    (define-key map (kbd "M-r") (lambda () (interactive) (revert-buffer)))
             map))
