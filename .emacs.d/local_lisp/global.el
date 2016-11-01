@@ -1,4 +1,4 @@
-(load-library "global-defs")
-(load-library "global-state")
-(load-library "org-ext")
-(load-library "python-ext")
+(load-file "~/.emacs.d/local_lisp/global-defs.el")
+(load-file "~/.emacs.d/local_lisp/global-state.el")
+(load-file "~/.emacs.d/local_lisp/org-ext.el")
+(load-file "~/.emacs.d/local_lisp/python-ext.el")
