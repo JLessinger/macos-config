@@ -7,3 +7,4 @@
 *.elc
 .gitconfig_*
 *.orig
+.emacs.d/tramp
