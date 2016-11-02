@@ -45,6 +45,8 @@
 	    (define-key map (kbd "C-c d") 'insert-current-datetime)
 	    (define-key map (kbd "M-l") 'goto-line)
 	    (define-key map (kbd "M-g") 'ace-window)
+	    (define-key map (kbd "C-c s") 'replace-string)
+	    (define-key map (kbd "C-c r") 'replace-regexp)
 	    (define-key map (kbd "M-`") (lambda () (interactive) (other-window 1)))
 	    (define-key map (kbd "M-~") (lambda () (interactive) (other-window -1)))
 	    (define-key map (kbd "M-r") (lambda () (interactive) (revert-buffer)))
