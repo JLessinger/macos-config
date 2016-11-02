@@ -25,6 +25,9 @@
 	(revert-buffer t t) )))
   (message "Refreshed open files."))
 
+(defun insert-current-datetime () (interactive)
+       (insert (shell-command-to-string "echo -n $(date +%F_%T)")))
+
 ;;; Company, and Company backends.
 (add-hook 'after-init-hook 'global-company-mode)
 (eval-after-load 'company
