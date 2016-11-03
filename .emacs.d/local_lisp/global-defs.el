@@ -48,6 +48,7 @@
 	    (define-key map (kbd "C-c s") 'replace-string)
 	    (define-key map (kbd "C-c r") 'replace-regexp)
 	    (define-key map (kbd "M-`") (lambda () (interactive) (other-window 1)))
+	    (define-key map (kbd "C-z") (kbd "C-x u"))
 	    (define-key map (kbd "M-~") (lambda () (interactive) (other-window -1)))
 	    (define-key map (kbd "M-r") (lambda () (interactive) (revert-buffer)))
             map))
