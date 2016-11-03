@@ -8,3 +8,4 @@
 .gitconfig_*
 *.orig
 .emacs.d/tramp
+*.pyc
