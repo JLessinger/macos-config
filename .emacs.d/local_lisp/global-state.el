@@ -31,3 +31,7 @@
 (add-hook 'find-file-hook (lambda () (linum-mode 1)))
 (add-hook 'find-file-hook 'global-kbd-mode)
 (tool-bar-mode -1)
+(add-to-list 'default-frame-alist '(font . "monaco-14" ))
+(set-face-attribute 'default t :font "monaco-14" )
+(setq backup-directory-alist `(("." . "~/.emacs.d/.saves")))
+(setq auto-save-default nil)
