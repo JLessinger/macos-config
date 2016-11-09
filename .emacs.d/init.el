@@ -27,8 +27,8 @@
    (quote
     ("~/Dropbox (Personal)/shared-notes/sh_main.org" "~/Documents/notes/money.org" "~/Documents/notes/main.org")))
  '(package-selected-packages
-   (quote
-    (sql-indent ace-window magit which-key use-package try org-bullets org haskell-mode haskell-emacs company-jedi company-anaconda buffer-move auctex))))
+   (quote (ace-window auctex buffer-move company-anaconda company-jedi fill-column-indicator haskell-emacs haskell-mode magit magit org org org-bullets org-bullets sql-indent try use-package which-key))))
+
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

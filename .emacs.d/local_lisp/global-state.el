@@ -16,6 +16,10 @@
 (use-package which-key
   :config (which-key-mode))
 
+(use-package fill-column-indicator)
+(add-hook 'find-file-hook 'fci-mode)
+(setq-default fci-rule-column 80)
+
 (setq inhibit-startup-message t)
 (setq indent-tabs-mode nil)
 (setq x-select-enable t)
