@@ -153,3 +153,11 @@ PROMPT_COMMAND="touch_local_fs"
 export PATH="/Users/jonathan/Library/anaconda2/bin:$PATH"
 
 #if [ -e /Users/jonathan/.nix-profile/etc/profile.d/nix.sh ]; then . /Users/jonathan/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
+
+# Avoid duplicates
+export HISTCONTROL=ignoredups:erasedups
+# When the shell exits, append to the history file instead of overwriting it
+shopt -s histappend
+
+# After each command, append to the history file and reread it
+export PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND$'\n'}history -a; history -c; history -r"
