@@ -1,4 +1,4 @@
-export EDITOR=emacsclient
+export EDITOR=emacs
 
 function cl {
     DIR=$1
