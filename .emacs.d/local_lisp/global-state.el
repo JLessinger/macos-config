@@ -21,7 +21,9 @@
 (setq-default fci-rule-column 80)
 
 (setq inhibit-startup-message t)
-(setq indent-tabs-mode nil)
+(setq-default indent-tabs-mode nil)
+(setq-default tab-width 2)
+(setq-default js-indent-level 2)
 (setq x-select-enable t)
 (global-linum-mode 1)
 (delete-selection-mode t)
