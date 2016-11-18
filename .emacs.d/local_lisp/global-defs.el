@@ -7,22 +7,13 @@
   "Revert buffer without confirmation."
   (interactive) (revert-buffer t t))
 
-(defun revert-all-buffers ()
+(defun revert-all-buffers (confirm)
   "Refreshes all open buffers from their respective files."
   (interactive)
   (dolist (buf (buffer-list))
     (with-current-buffer buf
-      (when (and (buffer-file-name) (file-exists-p (buffer-file-name)) (not (buffer-modified-p)))
-	(revert-buffer t t t) )))
-  (message "Refreshed open files.") )
-
-(defun revert-all-buffers-no-confirm ()
-  "Refreshes all open buffers from their respective files."
-  (interactive)
-  (dolist (buf (buffer-list))
-    (with-current-buffer buf
-      (when (and (buffer-file-name) (file-exists-p (buffer-file-name)) (not (buffer-modified-p)))
-	(revert-buffer t t) )))
+      (when (and (buffer-file-name) (file-exists-p (buffer-file-name)))
+        (revert-buffer t (if confirm nil t) t))))
   (message "Refreshed open files."))
 
 (defun insert-current-datetime () (interactive)
@@ -38,17 +29,17 @@
 (define-minor-mode global-kbd-mode
   :lighter " Global-kbd-mode"
   :keymap (let ((map (make-sparse-keymap)))
-            (define-key map (kbd "C-c C-r") 'revert-all-buffers-no-confirm)
-	    (define-key map (kbd "C-,") 'backward-paragraph)
-	    (define-key map (kbd "C-.") 'forward-paragraph)
-	    (define-key map (kbd "C-c i") (kbd "C-x h C-M-\\"))
-	    (define-key map (kbd "C-c d") 'insert-current-datetime)
-	    (define-key map (kbd "M-l") 'goto-line)
-	    (define-key map (kbd "M-g") 'ace-window)
-	    (define-key map (kbd "C-c s") 'replace-string)
-	    (define-key map (kbd "C-c r") 'replace-regexp)
-	    (define-key map (kbd "M-`") (lambda () (interactive) (other-window 1)))
-	    (define-key map (kbd "C-z") (kbd "C-x u"))
-	    (define-key map (kbd "M-~") (lambda () (interactive) (other-window -1)))
-	    (define-key map (kbd "M-r") (lambda () (interactive) (revert-buffer)))
+            (define-key map (kbd "C-c C-r") (lambda (interactive) (revert-all-buffers nil)))
+            (define-key map (kbd "C-,") 'backward-paragraph)
+            (define-key map (kbd "C-.") 'forward-paragraph)
+            (define-key map (kbd "C-c i") (kbd "C-x h C-M-\\"))
+            (define-key map (kbd "C-c d") 'insert-current-datetime)
+            (define-key map (kbd "M-l") 'goto-line)
+            (define-key map (kbd "M-g") 'ace-window)
+            (define-key map (kbd "C-c s") 'replace-string)
+            (define-key map (kbd "C-c r") 'replace-regexp)
+            (define-key map (kbd "M-`") (lambda () (interactive) (other-window 1)))
+            (define-key map (kbd "C-z") (kbd "C-x u"))
+            (define-key map (kbd "M-~") (lambda () (interactive) (other-window -1)))
+            (define-key map (kbd "M-r") (lambda () (interactive) (revert-buffer)))
             map))
