@@ -44,6 +44,10 @@
     (define-key map (kbd "M-o a") 'org-agenda)
     (define-key map (kbd "M-q") (kbd "C-g"))
     (define-key map (kbd "<escape>") (kbd "M-q"))
+    (define-key map (kbd "C-M-,") 'shrink-window-horizontally)
+    (define-key map (kbd "C-M-.") 'enlarge-window-horizontally)
+    (define-key map (kbd "C-M-<") 'shrink-window)
+    (define-key map (kbd "C-M->") 'enlarge-window)
     map))
 
 (define-minor-mode global-kbd-mode
