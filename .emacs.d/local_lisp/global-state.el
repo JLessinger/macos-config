@@ -1,4 +1,4 @@
-(load-theme 'wombat)
+(load-theme 'tango-dark)
 (package-initialize)
 (require 'package)
 (package-initialize)
