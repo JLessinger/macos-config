@@ -1,3 +1,4 @@
+(load-theme 'wombat)
 (package-initialize)
 (require 'package)
 (package-initialize)

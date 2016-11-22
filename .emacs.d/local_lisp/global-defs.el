@@ -43,6 +43,7 @@
     (define-key map (kbd "M-s s") 'ace-swap-window)
     (define-key map (kbd "M-o a") 'org-agenda)
     (define-key map (kbd "M-q") (kbd "C-g"))
+    (define-key map (kbd "<escape>") (kbd "M-q"))
     map))
 
 (define-minor-mode global-kbd-mode

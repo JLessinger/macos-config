@@ -264,12 +264,19 @@ footnote; or, the properties drawer.  Otherwise make it visible."
 
 (setq org-agenda-prefix-format
       '((agenda . " %i %-12:c%?-12t% s")
-	(timeline . "  % s")
-	(todo . "[ %-8:c %-32(concat (org-pretty-format-outline-path (cdr (org-get-outline-path))) \"]\") ")
-	(tags . "[ %-8:c %-32(concat (org-pretty-format-outline-path (cdr (org-get-outline-path))) \"]\") ")
-	(search . " %i %-12:c")))
+        (timeline . "  % s")
+        (todo . "%-8:c %-18(concat \" \" (org-entry-get-deadline) \" \")")
+        (tags . "%-8:c %-18(concat \" \" (org-entry-get-deadline) \" \")")
+        (search . " %i %-12:c")))
+
+(defun org-entry-get-deadline ()
+  (let ((dl (org-entry-get (point) "DEADLINE")))
+    (if dl dl "")))
 
 (defun org-pretty-format-outline-path (p)
   (if (consp p)
       (concat (org-format-outline-path p) " ")
     ""))
+
+(setq org-columns-default-format
+      "%64ITEM %TODO %3PRIORITY %DEADLINE")
