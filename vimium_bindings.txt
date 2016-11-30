@@ -1,0 +1,8 @@
+map k scrollDown
+map l scrollUp
+map j scrollLeft
+map ; scrollRight
+map . scrollPageUp
+map , scrollPageDown
+map <c-.> scrollFullPageUp
+map <c-,> scrollFullPageDown 
