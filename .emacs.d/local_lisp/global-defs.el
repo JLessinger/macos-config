@@ -28,8 +28,8 @@
 (defvar global-kbd-mode-map
   (let ((map (make-sparse-keymap)))
     (define-key map (kbd "C-c C-r") (lambda () (interactive) (revert-all-buffers nil)))
-    (define-key map (kbd "C-,") (lambda () (interactive) (next-line -8)))
-    (define-key map (kbd "C-.") (lambda () (interactive) (next-line 8)))
+    (define-key map (kbd "C-,") (lambda () (interactive) (next-line 8)))
+    (define-key map (kbd "C-.") (lambda () (interactive) (next-line -8)))
     (define-key map (kbd "C-c i") (kbd "C-x h C-M-\\"))
     (define-key map (kbd "C-c d") 'insert-current-datetime)
     (define-key map (kbd "M-l") 'goto-line)
