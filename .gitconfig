@@ -1,9 +1,6 @@
-[user]
-	name = Jonathan Lessinger
-	email = jonathan.lessinger@gmail.com
-[github]
-	user = JLessinger
-	
+[include]
+  # For username / creds / etc
+  path = ~/.gitconfig.local
 [credential]
 	helper = osxkeychain
 [core]
