@@ -1,0 +1,11 @@
+tool,functionalpath,gitpath,logpath
+KM,,km_macros.kmmacros,km/km.txt
+TotalSpaces2,~/Library/Preferences/com.binaryage.TotalSpaces2.plist,totalspaces/com.binaryage.TotalSpaces2.plist,totalspaces/totalspaces2.txt
+Amethyst,~/Library/Preferences/com.amethyst.Amethyst.plist,amethyst/com.amethyst.Amethyst.plist,amethyst/amethyst.txt
+,~/Library/KeyBindings/DefaultKeyBindings.dict,DefaultKeyBindings.dict,
+Vimium,,vimium_bindings.txt,
+Karabiner,~/.config/karabiner/karabiner.json,karabiner/karabiner.json,
+BetterTouchTool,~/Library/Application\ Support/BetterTouchTool/bttdata2,bettertouchtool/bttdata2,bettertouchtool/btt.txt
+Shortcat,~/Library/Preferences/com.sproutcube.Shortcat.plist,shortcat/com.sproutcube.Shortcat.plist,shortcat/shortcat.txt
+SizeUp,~/Library/Preferences/com.irradiatedsoftware.SizeUp.plist,sizeup/com.irradiatedsoftware.SizeUp.plist,sizeup/sizeup.txt
+Stay,/Users/jll/Library/Preferences/com.cordlessdog.Stay.plist,stay/com.cordlessdog.Stay.plist,stay/stay.txt
