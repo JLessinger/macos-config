@@ -1,6 +1,0 @@
-[core]
-	editor = emacs
-[push]
-	default = simple
-[alias]
-	sl = log --graph --all --decorate

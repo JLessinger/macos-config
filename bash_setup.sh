@@ -34,7 +34,7 @@ function execute_mac {
     cp .inputrc ~/ && ~/.inputrc
     cp .gitconfig_mac ~/.gitconfig
     /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-    brew install emacs
+    brew install emacs --with-cocoa
 }
 
 function execute_ubuntu {
