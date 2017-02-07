@@ -1,5 +1,9 @@
 export EDITOR=emacs
 
+function stt_both { setTerminalText 0 $@; }
+function stt_tab { setTerminalText 1 $@; }
+function stt_title { setTerminalText 2 $@; }
+
 function cl {
     DIR=$1
     if [ -z "$1" ]; then
