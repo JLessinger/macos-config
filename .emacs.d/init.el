@@ -15,6 +15,9 @@
   :config
   (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
 
+(use-package flycheck
+  :ensure t
+  :init (global-flycheck-mode))
 
 
 (custom-set-variables
@@ -28,7 +31,7 @@
     ("~/Dropbox (Personal)/shared-notes/sh_main.org" "~/Documents/notes/money.org" "~/Documents/notes/main.org")))
  '(package-selected-packages
    (quote
-    (ace-window auctex buffer-move company-anaconda company-jedi fill-column-indicator haskell-emacs haskell-mode magit magit org org org-bullets org-bullets sql-indent try use-package which-key))))
+    (flycheck ace-window auctex buffer-move company-anaconda company-jedi fill-column-indicator haskell-emacs haskell-mode magit magit org org org-bullets org-bullets sql-indent try use-package which-key))))
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
