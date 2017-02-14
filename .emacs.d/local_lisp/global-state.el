@@ -1,4 +1,4 @@
-(load-theme 'tango-dark)
+(load-theme 'whiteboard)
 (package-initialize)
 (require 'package)
 (package-initialize)
