@@ -25,10 +25,13 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(custom-safe-themes
+   (quote
+    ("da8e6e5b286cbcec4a1a99f273a466de34763eefd0e84a41c71543b16cd2efac" default)))
  '(ediff-window-setup-function (quote ediff-setup-windows-plain))
  '(org-agenda-files
    (quote
-    ("~/Dropbox (Personal)/shared-notes/sh_main.org" "~/Documents/notes/money.org" "~/Documents/notes/main.org")))
+    ("~/Documents/notes/gcal.org" "~/Dropbox/shared/shared-notes/shared_main.org" "~/Documents/notes/main.org" "~/Documents/notes/money.org")))
  '(package-selected-packages
    (quote
     (flycheck ace-window auctex buffer-move company-anaconda company-jedi fill-column-indicator haskell-emacs haskell-mode magit magit org org org-bullets org-bullets sql-indent try use-package which-key))))
@@ -39,3 +42,4 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+(put 'upcase-region 'disabled nil)
