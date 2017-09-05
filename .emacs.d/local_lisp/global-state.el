@@ -1,3 +1,6 @@
+(load-file "~/.emacs.d/load-directory.el")
+(require 'load-directory)
+(load-directory "~/.emacs.d/themes")
 (load-theme 'whiteboard)
 (package-initialize)
 (require 'package)
