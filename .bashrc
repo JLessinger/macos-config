@@ -44,6 +44,8 @@ test -r /sw/bin/init.sh && . /sw/bin/init.sh
 
 # python
 
+export PYTHONPATH="${PYTHONPATH}:/usr/local/lib/python2.7/site-packages"
+
 # Setting PATH for Python 2.7
 # The orginal version is saved in .profile.pysave
 export PATH="/Library/Frameworks/GTK+.framework/Versions/2.18.x11/Resources/bin:${PATH}"
