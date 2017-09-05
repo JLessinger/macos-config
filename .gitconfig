@@ -5,6 +5,7 @@
 	helper = osxkeychain
 [core]
 	editor = emacs
+	excludefiles = ~/.gitignore
 [push]
 	default = simple
 [alias]
