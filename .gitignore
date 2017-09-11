@@ -12,3 +12,4 @@
 *.pyc
 .gitconfig.local
 km_macros.kmsync
+.emacs.d/local_lisp/secrets.el
