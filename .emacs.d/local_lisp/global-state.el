@@ -44,3 +44,13 @@
 (add-to-list 'default-frame-alist '(font . "monaco-20" ))
 (setq backup-directory-alist `(("." . "~/.emacs.d/.saves")))
 (setq auto-save-default nil)
+
+(require 'org-gcal)
+(setq org-gcal-client-id "373560261426-2flhceom34nmrck54ch9gvunnrmebart.apps.googleusercontent.com"
+      org-gcal-client-secret (get-secret 'org-gcal-client-secret)
+      org-gcal-file-alist '(("jonathan.lessinger@gmail.com" .  "~/.gcal-sync.org")))
+
+(provide 'global-state)
+;;; global-state.el ends here
+
+
