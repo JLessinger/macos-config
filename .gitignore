@@ -4,6 +4,7 @@
 .DS_Store
 .emacs.d/el-get
 .emacs.d/.org-id-locations
+.emacs.d/org-gcal
 *.elc
 .gitconfig_*
 *.orig
