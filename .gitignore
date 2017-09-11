@@ -10,3 +10,4 @@
 .emacs.d/tramp
 *.pyc
 .gitconfig.local
+km_macros.kmsync
