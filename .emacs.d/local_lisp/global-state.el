@@ -1,3 +1,7 @@
+;;; global-state --- Defines top-level emacs variable values
+;;; Commentary:
+;;; Code:
+
 (load-file "~/.emacs.d/load-directory.el")
 (require 'load-directory)
 (load-directory "~/.emacs.d/themes")
