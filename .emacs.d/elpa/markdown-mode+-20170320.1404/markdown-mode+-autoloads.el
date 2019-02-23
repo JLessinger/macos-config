@@ -1,11 +1,11 @@
 ;;; markdown-mode+-autoloads.el --- automatically extracted autoloads
 ;;
 ;;; Code:
-(add-to-list 'load-path (or (file-name-directory #$) (car load-path)))
+(add-to-list 'load-path (directory-file-name (or (file-name-directory #$) (car load-path))))
 
-;;;### (autoloads nil "markdown-mode+" "markdown-mode+.el" (22936
-;;;;;;  30033 0 0))
-;;; Generated autoloads from markdown-mode+.el
+;;;### (autoloads nil "markdown-mode+" "../../../../../../../.emacs.d/elpa/markdown-mode+-20170320.1404/markdown-mode+.el"
+;;;;;;  "952e7ecb8cc13385f9d49d1cecfdf31f")
+;;; Generated autoloads from ../../../../../../../.emacs.d/elpa/markdown-mode+-20170320.1404/markdown-mode+.el
 
 (autoload 'markdown-export-latex "markdown-mode+" "\
 Output the Markdown file as LaTeX.
@@ -42,8 +42,10 @@ Process file with multimarkdown, copy it to the clipboard, and paste in safari's
 
 ;;;***
 
-;;;### (autoloads nil nil ("markdown-mode+-pkg.el") (22936 30033
-;;;;;;  113404 0))
+;;;### (autoloads nil nil ("../../../../../../../.emacs.d/elpa/markdown-mode+-20170320.1404/markdown-mode+-autoloads.el"
+;;;;;;  "../../../../../../../.emacs.d/elpa/markdown-mode+-20170320.1404/markdown-mode+-pkg.el"
+;;;;;;  "../../../../../../../.emacs.d/elpa/markdown-mode+-20170320.1404/markdown-mode+.el")
+;;;;;;  (23240 15186 171429 534000))
 
 ;;;***
 

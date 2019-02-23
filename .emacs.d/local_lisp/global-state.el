@@ -44,6 +44,8 @@
 (add-to-list 'default-frame-alist '(font . "monaco-20" ))
 (setq backup-directory-alist `(("." . "~/.emacs.d/.saves")))
 (setq auto-save-default nil)
+(setq org-log-done 'note)
+
 
 (require 'org-gcal)
 (setq org-gcal-client-id "373560261426-2flhceom34nmrck54ch9gvunnrmebart.apps.googleusercontent.com"

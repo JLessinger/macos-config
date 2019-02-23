@@ -44,11 +44,11 @@ test -r /sw/bin/init.sh && . /sw/bin/init.sh
 
 # python
 
-export PYTHONPATH="${PYTHONPATH}:/usr/local/lib/python2.7/site-packages"
+#export PYTHONPATH="${PYTHONPATH}:/usr/local/lib/python2.7/site-packages"
 
 # Setting PATH for Python 2.7
 # The orginal version is saved in .profile.pysave
-export PATH="/Library/Frameworks/GTK+.framework/Versions/2.18.x11/Resources/bin:${PATH}"
+# export PATH="/Library/Frameworks/GTK+.framework/Versions/2.18.x11/Resources/bin:${PATH}"
 
 ## use anaconda libraries instead
 #export PYTHONPATH="/usr/local/lib/python2.7/site-packages:/Library/Python/2.7/site-packages/"
@@ -156,9 +156,8 @@ PS1="\[\e[0;\$(_color_return)m\]\u\[\e[0m\]@\[\e[0;$((31 + $(hostname | cksum | 
 
 PROMPT_COMMAND="touch_local_fs"
 
-export PATH="/Users/jonathan/Library/anaconda2/bin:$PATH"
+#export PATH="/Users/jonathan/Library/anaconda2/bin:$PATH"
 
-#if [ -e /Users/jonathan/.nix-profile/etc/profile.d/nix.sh ]; then . /Users/jonathan/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
 
 # Avoid duplicates
 export HISTCONTROL=ignoredups:erasedups
@@ -169,3 +168,6 @@ shopt -s histappend
 export PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND$'\n'}history -a"
 # read history
 alias rh="history -c; history -r"
+
+export PATH="/Users/jonathan/Library/miniconda3/bin:$PATH"
+source "/Users/jonathan/Library/miniconda3/etc/profile.d/conda.sh"
